@@ -16,6 +16,14 @@ public class IndexController {
     @PostMapping("/register")
     public String userRegistration(@ModelAttribute User user, Model model){
         System.out.println(user.toString());
+        System.out.println(user.getNickname());
+        System.out.println(user.getPasswd());
+        System.out.println(user.getFname());
+        System.out.println(user.getLname());
+        System.out.println(user.getRole());
+        System.out.println(user.getTeam());
+        model.addAttribute("firstname", user.getFname());
+        model.addAttribute("lastname", user.getLname());
         return "welcome";
     }
 }
